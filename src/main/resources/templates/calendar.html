@@ -90,19 +90,22 @@
               color: '#6aba49',
               textColor: "#fff"
             });
+
             updateWorkDay(theDate, 'add');
           } else {
             // console.info(events);
             $.each(events, function (i, val) {
               $('#calendar').fullCalendar('removeEvents', val.id);
             });
-            updateWorkDay(theDate, 'del');
+
+            // updateWorkDay(theDate, 'del');
+            updateWorkDay(date.format('YYYY-MM-DD'), 'del');
           }
         },
         eventClick: function (calEvent, jsEvent, view) {
-          // console.info(calEvent.id);
-          // console.info(jsEvent);
-          // console.info(view);
+          console.info(calEvent.id);
+          console.info(jsEvent);
+          console.info(view);
           $('#calendar').fullCalendar('removeEvents', calEvent.id);
           updateWorkDay(calEvent.id, 'del');
         }

@@ -1,11 +1,12 @@
 package com.gwc.workday.entity;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
 
 /**
  * user.
@@ -18,7 +19,7 @@ import lombok.ToString;
 @Getter
 @Setter
 @ToString
-@Entity
+@Entity(name = "t_work_day")
 public class WorkDay {
 
   @Id
@@ -28,5 +29,5 @@ public class WorkDay {
   /**
    * 是否工作日，添加的都是休息日，所以都是false
    */
-  private Boolean isWorkDay;
+  private Integer isWorkDay;
 }

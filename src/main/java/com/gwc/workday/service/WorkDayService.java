@@ -52,7 +52,7 @@ public class WorkDayService {
       workDay = new WorkDay();
     }
     workDay.setDate(date);
-    workDay.setIsWorkDay(false);
+    workDay.setIsWorkDay(0);
     return workDayDao.save(workDay);
   }
 

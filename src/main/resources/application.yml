@@ -8,9 +8,9 @@ spring:
     mode: HTML
   datasource:
     driver-class-name: com.mysql.jdbc.Driver
-    url: jdbc:mysql://127.0.0.1:3306/workday
+    url: jdbc:mysql://127.0.0.1:3306/workday?characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&autoReconnect=true&useSSL=false
     username: root
-    password: cheng
+    password: root123
   jpa:
     hibernate:
       ddl-auto: update
