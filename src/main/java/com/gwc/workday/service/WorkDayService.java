@@ -65,7 +65,7 @@ public class WorkDayService {
   @Cacheable(key = "#date")
   public boolean isWorkDay(String date) {
     WorkDay holiday = workDayDao.findFirstByDate(date);
-    return ObjectUtils.isEmpty(holiday) ? true : false;
+    return ObjectUtils.isEmpty(holiday);
   }
 
   /**
@@ -100,7 +100,7 @@ public class WorkDayService {
   public String afterDays(String date, Integer days) throws ParseException {
 
     // 控制向前还是向后
-    boolean position = days > 0 ? true : false;
+    boolean position = days > 0;
     int size = Math.abs(days);
     while (size > 0) {
       if (position) {
